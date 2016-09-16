@@ -9,7 +9,7 @@ import Data.Int (Int16, Int32, Int64)
 import Data.Word (Word8, Word16, Word32)
 
 toU8 :: Word8 -> Char
-toU8 = chr . fromIntegral
+toU8 = chr . fromIntegral 
 
 toS16 :: Word8 -> Word8 -> Int16
 toS16 x y = fromIntegral z
