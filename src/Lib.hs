@@ -28,3 +28,20 @@ toS32 a b c d = fromIntegral z
 -- toF32 :: Word8 -> Word8 -> Word8 -> Word8 -> Float
 -- toF32 a b c d = fromIntegral z
 --   where x'
+
+(==>) :: (L.ByteString -> Maybe (a, L.ByteString)) -> (a -> L.ByteString -> Maybe (b, L.ByteString)) -> (L.ByteString -> Maybe (b, L.ByteString))
+(==>) f g bs = f bs >>= \(a, bs') -> g a bs'
+
+
+parseS32 :: L.ByteString -> Maybe (Int32, L.ByteString)
+parseS32 bs = undefined
+        
+
+readHeader :: L.ByteString -> Header
+readHeader bs = undefined --Header(toS32)
+
+
+data Header = Header {
+  numberOfFrames :: Integer,
+  numberOfTags :: Integer
+}
